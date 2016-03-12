@@ -1,0 +1,46 @@
+.coverLayer {
+    position:fixed;
+    height: 100%;
+    width:100%;
+    top:100px;
+    opacity: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    will-change: opacity;
+    transform: translateZ(0px);
+    z-index: 1200;
+    background-color:rgba(120,0,0,0.541176);
+}
+.coverLayer + .hide { /* + Only applied when used as sibling*/
+    left: -100%;
+    transition: left 0ms cubic-bezier(0.23, 1, 0.32,1) 400ms, opacity 400ms cubic-bezier(0.23, 1, 0.32,1) 0ms;
+    pointer-events: none;
+}
+.coverLayer + .show {
+    left: 0;
+    transition: left 0ms cubic-bezier(0.23, 1, 0.32,1) 0ms, opacity 400ms cubic-bezier(0.23, 1, 0.32,1) 0ms;
+    pointer-events: auto;
+}
+.menu-host{
+    color:rgba(0,0,0,0.870588);
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-shadow: 0px;
+    height: 100%;
+    width:200px;
+    position:fixed;
+    z-index:1300;
+    top:100px;
+    overflow:auto;
+    background: rgb(255,0,0);
+    right:0;
+}
+.menu-right{
+    right:0;
+}
+.menu-host + .hide {
+    transform: translate3d(-210px,0,0);
+}
+.menu-host + .show {
+    transform: translate3d(0,0,0);
+}
